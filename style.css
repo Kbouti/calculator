@@ -1,7 +1,7 @@
 body {
     display: flex;
     justify-content: center;
-    background: rgb(4, 157, 137);
+    background: rgb(8, 130, 114);
 
 }
 
@@ -10,7 +10,7 @@ body {
     width:40vh;
     height:60vh;
     margin-top:20vh;
-    background: rgb(128, 128, 128);
+    background: rgb(166, 108, 210);
     border: 2px solid black;
     border-radius: 20px;
 }
@@ -40,4 +40,19 @@ grid-column:span 2;
     background: rgb(98, 191, 209);
     margin: 10px;
     border-radius:10px
+    
+}
+
+.button {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#zeroButton {
+    border-bottom-left-radius:20px;
+}
+
+#equalButton {
+    border-bottom-right-radius:20px;
 }
