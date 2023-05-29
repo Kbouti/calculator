@@ -14,7 +14,11 @@ body {
     border: 2px solid black;
 }
 
-.buttonNumber {
+.button {
+    outline: 2px solid black;
+}
+
+.numberButton {
     justify-self:center;
 }
 
@@ -30,3 +34,7 @@ body {
 grid-column:span 2;
 }
 
+#upperSection {
+    background: rgb(98, 191, 209);
+    margin: 10px;
+}
