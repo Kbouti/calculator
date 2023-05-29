@@ -12,29 +12,32 @@ body {
     margin-top:20vh;
     background: rgb(128, 128, 128);
     border: 2px solid black;
+    border-radius: 20px;
 }
 
 .button {
     outline: 2px solid black;
 }
 
-.numberButton {
-    justify-self:center;
-}
+
 
 #operandSection{
     display: grid;
-}
 
-#numberSection{
-    display: grid;
-    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+
 }
+#clearButton,
 #zeroButton {
 grid-column:span 2;
+}
+
+#equalButton {
+    grid-row:span 2;
 }
 
 #upperSection {
     background: rgb(98, 191, 209);
     margin: 10px;
+    border-radius:10px
 }
