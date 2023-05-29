@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    background: rgb(4, 157, 137);
+
+}
+
+#calculator {
+    display: grid;
+    width:40vh;
+    height:60vh;
+    margin-top:20vh;
+    background: rgb(128, 128, 128);
+    border: 2px solid black;
+}
+
+.buttonNumber {
+    justify-self:center;
+}
+
+#operandSection{
+    display: grid;
+}
+
+#numberSection{
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+}
+#zeroButton {
+grid-column:span 2;
+}
+
