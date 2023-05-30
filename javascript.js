@@ -56,6 +56,8 @@ function allClear(){
     operation = null;
     secondOperand = null;
     currentInput = 0;
+    answerGiven = false;
+
     upperText_div.innerHTML = 0;
     lowerText_div.innerHTML = 0;
 }
