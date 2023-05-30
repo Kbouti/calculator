@@ -6,7 +6,9 @@ body {
 }
 
 #calculator {
-    display: grid;
+
+    /* display: flex;
+    flex-direction:column; */
     width:40vh;
     height:60vh;
     margin-top:20vh;
@@ -39,7 +41,11 @@ grid-column:span 2;
 #upperSection {
     background: rgb(98, 191, 209);
     margin: 10px;
-    border-radius:10px
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items:flex-end
     
 }
 
