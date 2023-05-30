@@ -64,18 +64,6 @@ function updateCurrentInput(i){
     answerGiven = false;
 }
 
-
-function allClear(){
-    firstOperand = null;
-    operation = null;
-    secondOperand = null;
-    currentInput = 0;
-    answerGiven = false;
-
-    upperText_div.innerHTML = 0;
-    lowerText_div.innerHTML = 0;
-}
-
 function shortenNumber(number){
     const powerOfTen = Math.pow(10, 4);
     const shortenedNumber = Math.round(number * powerOfTen) / powerOfTen;
