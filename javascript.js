@@ -31,9 +31,9 @@ upperText_div.innerHTML = 0;
 lowerText_div.innerHTML = 0;
 
 
-let firstOperand;
+let firstOperand = null;
 let operation = null;
-let secondOperand;
+let secondOperand = null;
 let solution;
 let currentInput = 0;
 
@@ -47,6 +47,14 @@ function updateCurrentInput(i){
     lowerText_div.innerHTML = currentInput;
 }
 
+
+function allClear(){
+    let firstOperand = null;
+    let operation = null;
+    let secondOperand = null;
+    upperText_div.innerHTML = 0;
+    lowerText_div.innerHTML = 0;
+}
 
 function updateOperation(i) {
     if (operation == null) {
@@ -65,30 +73,26 @@ function updateOperation(i) {
 
 
 function compute(){
-    // console.log(`firstOperand is ${firstOperand}`)
-    // console.log(`secondOperand is ${secondOperand}`)
-    // console.log(`currentInput is ${currentInput}`)
-
     secondOperand = currentInput;
-
-
-if (operation == `+`){
-    solution = parseInt(firstOperand) + parseInt(secondOperand);
-
-}
-else if (operation == `-`){
-    solution = firstOperand - secondOperand;
-}
-else if (operation == `x`){
-    solution = firstOperand * secondOperand;
-}
-else if (operation == `/`){
-    solution = firstOperand / secondOperand;
-}
-upperText_div.innerHTML = `${firstOperand} ${operation} ${secondOperand} =`
-lowerText_div.innerHTML = solution;
+    if (operation == `+`){
+        solution = parseInt(firstOperand) + parseInt(secondOperand);
+    }
+    else if (operation == `-`){
+        solution = firstOperand - secondOperand;
+    }
+    else if (operation == `x`){
+        solution = firstOperand * secondOperand;
+    }
+    else if (operation == `/`){
+        solution = firstOperand / secondOperand;
+    }
+    upperText_div.innerHTML = `${firstOperand} ${operation} ${secondOperand} =`
+    lowerText_div.innerHTML = solution;
 }
 
+clearButton_div.addEventListener(`click`, function(){
+    allClear();
+})
 
 equalButton_div.addEventListener(`click`, function(){
     compute(firstOperand, secondOperand, operation)
@@ -124,22 +128,18 @@ eightButton_div.addEventListener(`click`, function() {
 nineButton_div.addEventListener(`click`, function() {
     updateCurrentInput(9)})
 
-
 addButton_div.addEventListener(`click`, function(){
     updateOperation(`+`);
 })
 
 subtractButton_div.addEventListener(`click`, function(){
     updateOperation(`-`);
-
 })
 
 multiplyButton_div.addEventListener(`click`, function(){
     updateOperation(`x`);
-
 })
 
 divideButton_div.addEventListener(`click`, function(){
     updateOperation(`/`);
-
 })
