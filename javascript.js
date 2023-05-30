@@ -158,3 +158,33 @@ subtractButton_div.addEventListener(`click`, function(){
 
     }
 })
+
+multiplyButton_div.addEventListener(`click`, function(){
+    if (operation == null) {
+        operation = `x`;
+        firstOperand = currentInput;
+        currentInput = 0;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+        lowerText_div.innerHTML = currentInput;
+    }
+    else {
+        operation = `x`;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+
+    }
+})
+
+divideButton_div.addEventListener(`click`, function(){
+    if (operation == null) {
+        operation = `/`;
+        firstOperand = currentInput;
+        currentInput = 0;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+        lowerText_div.innerHTML = currentInput;
+    }
+    else {
+        operation = `/`;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+
+    }
+})
