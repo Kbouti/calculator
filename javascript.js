@@ -4,7 +4,6 @@ console.log(`Welcome to Calculator`)
 const upperText_div = document.getElementById(`upperText`);
 const lowerText_div = document.getElementById(`lowerText`);
 
-
 const clearButton_div = document.getElementById(`clearButton`);
 const divideButton_div = document.getElementById(`divideButton`);
 const multiplyButton_div = document.getElementById(`multiplyButton`);
@@ -35,156 +34,82 @@ lowerText_div.innerHTML = 0;
 let firstOperand;
 let operation = null;
 let secondOperand;
-
 let currentInput = 0;
 
-oneButton_div.addEventListener(`click`, function() {
+function updateCurrentInput(i){
     if(currentInput == 0) {
-        currentInput = `1`;
+        currentInput = `${i}`;
     }
     else {
-        currentInput =currentInput + `1`;
+        currentInput =currentInput + `${i}`;
     }
     lowerText_div.innerHTML = currentInput;
-})
+}
+
+
+function updateOperation(i) {
+    if (operation == null) {
+        operation = `${i}`;
+        firstOperand = currentInput;
+        currentInput = 0;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+        lowerText_div.innerHTML = currentInput;
+    }
+    else {
+        operation = `${i}`;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+
+    }
+}
+
+
+
+zeroButton_div.addEventListener(`click`, function() {
+    updateCurrentInput(0)})
+
+oneButton_div.addEventListener(`click`, function() {
+    updateCurrentInput(1)})
 
 twoButton_div.addEventListener(`click`, function() {
-    if(currentInput == 0) {
-        currentInput = `2`;
-    }
-    else {
-        currentInput =currentInput + `2`;
-    }
-    lowerText_div.innerHTML = currentInput;
-})
+    updateCurrentInput(2)})
 
 threeButton_div.addEventListener(`click`, function() {
-    if(currentInput == 0) {
-        currentInput = `3`;
-    }
-    else {
-        currentInput =currentInput + `3`;
-    }
-    lowerText_div.innerHTML = currentInput;
-})
+    updateCurrentInput(3)})
 
 fourButton_div.addEventListener(`click`, function() {
-    if(currentInput == 0) {
-        currentInput = `4`;
-    }
-    else {
-        currentInput =currentInput + `4`;
-    }
-    lowerText_div.innerHTML = currentInput;
-})
+    updateCurrentInput(4)})
 
 fiveButton_div.addEventListener(`click`, function() {
-    if(currentInput == 0) {
-        currentInput = `5`;
-    }
-    else {
-        currentInput =currentInput + `5`;
-    }
-    lowerText_div.innerHTML = currentInput;
-})
+    updateCurrentInput(5)})
 
 sixButton_div.addEventListener(`click`, function() {
-    if(currentInput == 0) {
-        currentInput = `6`;
-    }
-    else {
-        currentInput =currentInput + `6`;
-    }
-    lowerText_div.innerHTML = currentInput;
-})
+    updateCurrentInput(6)})
 
 sevenButton_div.addEventListener(`click`, function() {
-    if(currentInput == 0) {
-        currentInput = `7`;
-    }
-    else {
-        currentInput =currentInput + `7`;
-    }
-    lowerText_div.innerHTML = currentInput;
-})
+    updateCurrentInput(7)})
 
 eightButton_div.addEventListener(`click`, function() {
-    if(currentInput == 0) {
-        currentInput = `8`;
-    }
-    else {
-        currentInput =currentInput + `8`;
-    }
-    lowerText_div.innerHTML = currentInput;
-})
+    updateCurrentInput(8)})
 
 nineButton_div.addEventListener(`click`, function() {
-    if(currentInput == 0) {
-        currentInput = `9`;
-    }
-    else {
-        currentInput =currentInput + `9`;
-    }
-    lowerText_div.innerHTML = currentInput;
-})
+    updateCurrentInput(9)})
 
 
 addButton_div.addEventListener(`click`, function(){
-    if (operation == null) {
-        operation = `+`;
-        firstOperand = currentInput;
-        currentInput = 0;
-        upperText_div.innerHTML = `${firstOperand} ${operation}`;
-        lowerText_div.innerHTML = currentInput;
-    }
-    else {
-        operation = `+`;
-        upperText_div.innerHTML = `${firstOperand} ${operation}`;
-
-    }
+    updateOperation(`+`);
 })
 
 subtractButton_div.addEventListener(`click`, function(){
-    if (operation == null) {
-        operation = `-`;
-        firstOperand = currentInput;
-        currentInput = 0;
-        upperText_div.innerHTML = `${firstOperand} ${operation}`;
-        lowerText_div.innerHTML = currentInput;
-    }
-    else {
-        operation = `-`;
-        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+    updateOperation(`-`);
 
-    }
 })
 
 multiplyButton_div.addEventListener(`click`, function(){
-    if (operation == null) {
-        operation = `x`;
-        firstOperand = currentInput;
-        currentInput = 0;
-        upperText_div.innerHTML = `${firstOperand} ${operation}`;
-        lowerText_div.innerHTML = currentInput;
-    }
-    else {
-        operation = `x`;
-        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+    updateOperation(`x`);
 
-    }
 })
 
 divideButton_div.addEventListener(`click`, function(){
-    if (operation == null) {
-        operation = `/`;
-        firstOperand = currentInput;
-        currentInput = 0;
-        upperText_div.innerHTML = `${firstOperand} ${operation}`;
-        lowerText_div.innerHTML = currentInput;
-    }
-    else {
-        operation = `/`;
-        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+    updateOperation(`/`);
 
-    }
 })
