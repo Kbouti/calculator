@@ -39,15 +39,15 @@ let currentInput = 0;
 let answerGiven = false;
 
 function decimal(){
-    if (currentInput.includes(`.`) == false){
-        currentInput += `.`
+    if ((currentInput === 0) || (currentInput.includes(`.`) == false)){
+        currentInput += `.`;
+        firstOperand = `0.`;
         lowerText_div.innerHTML = currentInput;
-
     }
 }
 
 function updateCurrentInput(i){
-    if(currentInput == 0) {
+    if(currentInput === 0) {
         currentInput = `${i}`;
     }
     else {
@@ -68,6 +68,15 @@ function allClear(){
     upperText_div.innerHTML = 0;
     lowerText_div.innerHTML = 0;
 }
+
+function shortenNumber(number){
+    const powerOfTen = Math.pow(10, 4);
+    const shortenedNumber = Math.round(number * powerOfTen) / powerOfTen;
+    console.log(`shortened number ${shortenedNumber}`)
+
+    return shortenedNumber;
+}
+
 
 function updateOperation(i) {
     if (operation == null) {
@@ -96,7 +105,16 @@ function updateOperation(i) {
 function compute(){
     secondOperand = currentInput;
     if (operation == `+`){
-        solution = parseInt(firstOperand) + parseInt(secondOperand);
+        console.log(`first operand: ${firstOperand}`)
+        console.log(`second operand: ${secondOperand}`)
+
+        console.log((firstOperand))
+        solution = (parseInt(firstOperand) + parseInt(secondOperand));
+
+        console.log(solution)
+        console.log(`first operand: ${firstOperand}`)
+        console.log(`second operand: ${secondOperand}`)
+
     }
     else if (operation == `-`){
         solution = firstOperand - secondOperand;
@@ -107,6 +125,9 @@ function compute(){
     else if (operation == `/`){
         solution = firstOperand / secondOperand;
     }
+console.log(solution)
+    solution = shortenNumber(solution)
+    console.log(solution)
     currentInput = 0;
     upperText_div.innerHTML = `${firstOperand} ${operation} ${secondOperand} =`
     lowerText_div.innerHTML = solution;
