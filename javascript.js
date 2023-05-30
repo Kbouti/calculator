@@ -36,6 +36,7 @@ let operation = null;
 let secondOperand = null;
 let solution;
 let currentInput = 0;
+let answerGiven = false;
 
 
 
@@ -94,6 +95,7 @@ function compute(){
     else if (operation == `/`){
         solution = firstOperand / secondOperand;
     }
+    currentInput = 0;
     upperText_div.innerHTML = `${firstOperand} ${operation} ${secondOperand} =`
     lowerText_div.innerHTML = solution;
 }
@@ -103,8 +105,14 @@ clearButton_div.addEventListener(`click`, function(){
 })
 
 equalButton_div.addEventListener(`click`, function(){
-    compute(firstOperand, secondOperand, operation)
-})
+    if (operation == null){
+        solution = currentInput;
+        upperText_div.innerHTML = `${solution} =`;
+        lowerText_div.innerHTML = solution;
+    }
+    else {
+        compute(firstOperand, secondOperand, operation)
+}})
 
 zeroButton_div.addEventListener(`click`, function() {
     updateCurrentInput(0)})
