@@ -15,6 +15,8 @@ body {
     background: rgb(166, 108, 210);
     border: 2px solid black;
     border-radius: 20px;
+    
+    font-size:30px;
 }
 
 .button {
@@ -24,7 +26,7 @@ body {
 
 
 #operandSection{
-    flex-grow:2;
+    flex-grow:3;
     display: grid;
     grid-template: repeat(5, 1fr) / repeat(4, 1fr);
 }
@@ -46,8 +48,14 @@ grid-column:span 2;
     justify-content: space-around;
     align-items:flex-end;
     flex-grow: 1;
-    
+    padding-right:15px;
 }
+
+#upperText {
+    font-size:20px;
+}
+
+
 
 .button {
     display:flex;
