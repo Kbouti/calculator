@@ -105,16 +105,7 @@ function updateOperation(i) {
 function compute(){
     secondOperand = currentInput;
     if (operation == `+`){
-        console.log(`first operand: ${firstOperand}`)
-        console.log(`second operand: ${secondOperand}`)
-
-        console.log((firstOperand))
-        solution = (parseInt(firstOperand) + parseInt(secondOperand));
-
-        console.log(solution)
-        console.log(`first operand: ${firstOperand}`)
-        console.log(`second operand: ${secondOperand}`)
-
+        solution  = +firstOperand + +secondOperand   // "+" sign ensures both operands are formatted as a number
     }
     else if (operation == `-`){
         solution = firstOperand - secondOperand;
