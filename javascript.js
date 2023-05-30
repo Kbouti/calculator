@@ -38,7 +38,13 @@ let solution;
 let currentInput = 0;
 let answerGiven = false;
 
+function decimal(){
+    if (currentInput.includes(`.`) == false){
+        currentInput += `.`
+        lowerText_div.innerHTML = currentInput;
 
+    }
+}
 
 function updateCurrentInput(i){
     if(currentInput == 0) {
@@ -110,6 +116,10 @@ function compute(){
 
 clearButton_div.addEventListener(`click`, function(){
     allClear();
+})
+
+dotButton_div.addEventListener(`click`, function(){
+    decimal();
 })
 
 equalButton_div.addEventListener(`click`, function(){
