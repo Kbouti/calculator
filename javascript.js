@@ -73,7 +73,7 @@ function compute(){
 
 
 if (operation == `+`){
-    solution = firstOperand + secondOperand;
+    solution = parseInt(firstOperand) + parseInt(secondOperand);
 
 }
 else if (operation == `-`){
