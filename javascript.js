@@ -37,6 +37,8 @@ let secondOperand = null;
 let solution;
 let currentInput = 0;
 
+
+
 function updateCurrentInput(i){
     if(currentInput == 0) {
         currentInput = `${i}`;
@@ -49,9 +51,10 @@ function updateCurrentInput(i){
 
 
 function allClear(){
-    let firstOperand = null;
-    let operation = null;
-    let secondOperand = null;
+    firstOperand = null;
+    operation = null;
+    secondOperand = null;
+    currentInput = 0;
     upperText_div.innerHTML = 0;
     lowerText_div.innerHTML = 0;
 }
@@ -65,9 +68,7 @@ function updateOperation(i) {
         lowerText_div.innerHTML = currentInput;
     }
     else {
-        operation = `${i}`;
-        upperText_div.innerHTML = `${firstOperand} ${operation}`;
-
+        compute()
     }
 }
 
