@@ -69,6 +69,13 @@ function updateOperation(i) {
     }
     else {
         compute()
+        firstOperand = solution;
+        operation = `${i}`;
+        currentInput = 0;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+        lowerText_div.innerHTML = currentInput;
+        
+
     }
 }
 
