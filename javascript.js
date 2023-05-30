@@ -34,6 +34,7 @@ lowerText_div.innerHTML = 0;
 let firstOperand;
 let operation = null;
 let secondOperand;
+let solution;
 let currentInput = 0;
 
 function updateCurrentInput(i){
@@ -63,6 +64,35 @@ function updateOperation(i) {
 }
 
 
+function compute(){
+    // console.log(`firstOperand is ${firstOperand}`)
+    // console.log(`secondOperand is ${secondOperand}`)
+    // console.log(`currentInput is ${currentInput}`)
+
+    secondOperand = currentInput;
+
+
+if (operation == `+`){
+    solution = firstOperand + secondOperand;
+
+}
+else if (operation == `-`){
+    solution = firstOperand - secondOperand;
+}
+else if (operation == `x`){
+    solution = firstOperand * secondOperand;
+}
+else if (operation == `/`){
+    solution = firstOperand / secondOperand;
+}
+upperText_div.innerHTML = `${firstOperand} ${operation} ${secondOperand} =`
+lowerText_div.innerHTML = solution;
+}
+
+
+equalButton_div.addEventListener(`click`, function(){
+    compute(firstOperand, secondOperand, operation)
+})
 
 zeroButton_div.addEventListener(`click`, function() {
     updateCurrentInput(0)})
