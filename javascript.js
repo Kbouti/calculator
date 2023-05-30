@@ -26,17 +26,24 @@ const equalButton_div = document.getElementById(`equalButton`);
 const zeroButton_div = document.getElementById(`zeroButton`);
 const dotButton_div = document.getElementById(`dotButton`);
 
-
-upperText_div.innerHTML = 0;
-lowerText_div.innerHTML = 0;
-
-
-let firstOperand = null;
-let operation = null;
-let secondOperand = null;
+let firstOperand;
+let operation;
+let secondOperand;
 let solution;
-let currentInput = 0;
-let answerGiven = false;
+let currentInput;
+let answerGiven;
+
+function allClear(){
+    firstOperand = null;
+    operation = null;
+    secondOperand = null;
+    currentInput = 0;
+    answerGiven = false;
+    upperText_div.innerHTML = 0;
+    lowerText_div.innerHTML = 0;
+}
+
+allClear();
 
 function decimal(){
     if ((currentInput === 0) || (currentInput.includes(`.`) == false)){
