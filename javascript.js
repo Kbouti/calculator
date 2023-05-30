@@ -64,6 +64,10 @@ function updateOperation(i) {
     if (operation == null) {
         operation = `${i}`;
         firstOperand = currentInput;
+        if (answerGiven == true){
+            firstOperand = solution;
+        }
+        console.log(firstOperand);
         currentInput = 0;
         upperText_div.innerHTML = `${firstOperand} ${operation}`;
         lowerText_div.innerHTML = currentInput;
@@ -75,8 +79,7 @@ function updateOperation(i) {
         currentInput = 0;
         upperText_div.innerHTML = `${firstOperand} ${operation}`;
         lowerText_div.innerHTML = currentInput;
-        
-
+    
     }
 }
 
@@ -98,6 +101,8 @@ function compute(){
     currentInput = 0;
     upperText_div.innerHTML = `${firstOperand} ${operation} ${secondOperand} =`
     lowerText_div.innerHTML = solution;
+    operation = null;
+    answerGiven = true;
 }
 
 clearButton_div.addEventListener(`click`, function(){
