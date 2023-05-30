@@ -48,6 +48,7 @@ function updateCurrentInput(i){
         currentInput =currentInput + `${i}`;
     }
     lowerText_div.innerHTML = currentInput;
+    answerGiven = false;
 }
 
 
