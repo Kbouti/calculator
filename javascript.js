@@ -137,4 +137,24 @@ addButton_div.addEventListener(`click`, function(){
         upperText_div.innerHTML = `${firstOperand} ${operation}`;
         lowerText_div.innerHTML = currentInput;
     }
+    else {
+        operation = `+`;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+
+    }
+})
+
+subtractButton_div.addEventListener(`click`, function(){
+    if (operation == null) {
+        operation = `-`;
+        firstOperand = currentInput;
+        currentInput = 0;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+        lowerText_div.innerHTML = currentInput;
+    }
+    else {
+        operation = `-`;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+
+    }
 })
