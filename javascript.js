@@ -1,6 +1,5 @@
 console.log(`Welcome to Calculator`)
 
-
 const upperText_div = document.getElementById(`upperText`);
 const lowerText_div = document.getElementById(`lowerText`);
 
@@ -67,11 +66,8 @@ function updateCurrentInput(i){
 function shortenNumber(number){
     const powerOfTen = Math.pow(10, 4);
     const shortenedNumber = Math.round(number * powerOfTen) / powerOfTen;
-    console.log(`shortened number ${shortenedNumber}`)
-
     return shortenedNumber;
 }
-
 
 function updateOperation(i) {
     if (operation == null) {
@@ -80,7 +76,6 @@ function updateOperation(i) {
         if (answerGiven == true){
             firstOperand = solution;
         }
-        console.log(firstOperand);
         currentInput = 0;
         upperText_div.innerHTML = `${firstOperand} ${operation}`;
         lowerText_div.innerHTML = currentInput;
@@ -92,10 +87,8 @@ function updateOperation(i) {
         currentInput = 0;
         upperText_div.innerHTML = `${firstOperand} ${operation}`;
         lowerText_div.innerHTML = currentInput;
-    
     }
 }
-
 
 function compute(){
     secondOperand = currentInput;
@@ -111,9 +104,7 @@ function compute(){
     else if (operation == `/`){
         solution = firstOperand / secondOperand;
     }
-console.log(solution)
     solution = shortenNumber(solution)
-    console.log(solution)
     currentInput = 0;
     upperText_div.innerHTML = `${firstOperand} ${operation} ${secondOperand} =`
     lowerText_div.innerHTML = solution;
