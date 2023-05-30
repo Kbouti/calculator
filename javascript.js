@@ -33,7 +33,7 @@ lowerText_div.innerHTML = 0;
 
 
 let firstOperand;
-let Operation;
+let operation = null;
 let secondOperand;
 
 let currentInput = 0;
@@ -126,4 +126,15 @@ nineButton_div.addEventListener(`click`, function() {
         currentInput =currentInput + `9`;
     }
     lowerText_div.innerHTML = currentInput;
+})
+
+
+addButton_div.addEventListener(`click`, function(){
+    if (operation == null) {
+        operation = `+`;
+        firstOperand = currentInput;
+        currentInput = 0;
+        upperText_div.innerHTML = `${firstOperand} ${operation}`;
+        lowerText_div.innerHTML = currentInput;
+    }
 })
