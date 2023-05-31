@@ -21,7 +21,6 @@ body {
     background: rgb(120, 82, 149);
     border: 4px solid black;
     border-radius: 20px;
-    
     font-size:30px;
 }
 
@@ -35,7 +34,6 @@ body {
 
 .button:hover {
     background-color:rgb(107, 107, 107);
-
 }
 
 
@@ -53,11 +51,11 @@ body {
 grid-column:span 2;
 }
 #clearButton {
-    background-color:rgb(231, 135, 26)
+    background-color:rgb(231, 135, 26);
 }
 #clearButton:hover,
 #equalButton:hover {
-    background-color:rgb(183, 108, 24)
+    background-color:rgb(183, 108, 24);
 
 }
 
@@ -65,7 +63,7 @@ grid-column:span 2;
 #multiplyButton,
 #subtractButton,
 #addButton {
-    background-color:rgb(115, 115, 115)
+    background-color:rgb(115, 115, 115);
 
 }
 
@@ -74,14 +72,14 @@ grid-column:span 2;
 #multiplyButton:hover,
 #subtractButton:hover,
 #addButton:hover {
-    background-color:rgb(82, 82, 82)
+    background-color:rgb(82, 82, 82);
 
 }
 
 
 #equalButton {
     grid-row:span 2;
-    background-color:rgb(231, 135, 26)
+    background-color:rgb(231, 135, 26);
 
 }
 
