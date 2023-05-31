@@ -52,7 +52,6 @@ function clear(){
 
 function ContainsEqual(){
     if (upperText_div.innerHTML.includes(`=`)) {
-        console.log(`true`);
         return true;
     }
 }
@@ -219,4 +218,13 @@ multiplyButton_div.addEventListener(`click`, function(){
 
 divideButton_div.addEventListener(`click`, function(){
     updateOperation(`/`);
+})
+
+document.addEventListener(`keydown`, function(event){
+    console.log(event);
+    for (let i = 0; i < 10; i++){
+        if (event.key == i) {
+            updateCurrentInput(i)
+        }
+    }
 })
