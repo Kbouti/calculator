@@ -51,9 +51,7 @@ function clear(){
 }
 
 function ContainsEqual(){
-    if (upperText_div.innerHTML.includes(`=`)) {
-        return true;
-    }
+    return upperText_div.innerHTML.includes(`=`)
 }
 
 function decimal(){
@@ -147,9 +145,7 @@ function calculate(){
         upperText_div.innerHTML = `${solution} =`;
         lowerText_div.innerHTML = solution;
     }
-    else {
-        compute(firstOperand, secondOperand, operation)    
-    }
+    compute(firstOperand, secondOperand, operation)    
 }
 
 function postSolution(){
@@ -227,8 +223,7 @@ divideButton_div.addEventListener(`click`, function(){
 })
 
 document.addEventListener(`keydown`, function(event){
-    console.log(event);   
-    //  use this to alert what key was pressed-if I want to add functionality to another key
+    // console.log(event);   use this to alert what key was pressed-if I want to add functionality to another key
     for (let i = 0; i < 10; i++){
         if (event.key == i) {
             updateCurrentInput(i)
