@@ -128,7 +128,7 @@ function compute(){
         postSolution();
     }
     else if ((operation == `/`) && (secondOperand == 0)){
-        solution = `Cannot divide by zero`
+        solution = `Dividin' by zero ain't cool, man`
         postSolution();
         firstOperand = null;
         operation = null;
