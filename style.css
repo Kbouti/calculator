@@ -33,6 +33,10 @@ body {
     box-shadow: 3px 3px 2px black ;
 }
 
+.button:hover {
+    background-color:rgb(107, 107, 107);
+
+}
 
 
 #buttonPanel{
@@ -51,12 +55,26 @@ grid-column:span 2;
 #clearButton {
     background-color:rgb(231, 135, 26)
 }
+#clearButton:hover,
+#equalButton:hover {
+    background-color:rgb(183, 108, 24)
+
+}
 
 #divideButton,
 #multiplyButton,
 #subtractButton,
 #addButton {
     background-color:rgb(115, 115, 115)
+
+}
+
+
+#divideButton:hover,
+#multiplyButton:hover,
+#subtractButton:hover,
+#addButton:hover {
+    background-color:rgb(82, 82, 82)
 
 }
 

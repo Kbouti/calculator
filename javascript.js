@@ -124,7 +124,7 @@ function compute(){
         postSolution();
     }
     else if ((operation == `/`) && (secondOperand == 0)){
-        solution = `Dividin' by zero ain't cool, man`
+        solution = `Dividing by zero ain't cool, man!`
         postSolution();
         firstOperand = null;
         operation = null;
