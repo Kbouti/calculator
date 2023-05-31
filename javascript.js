@@ -44,6 +44,13 @@ function allClear(){
 
 allClear();
 
+function clear(){
+    currentInput = 0;
+    lowerText_div.innerHTML = currentInput;
+
+}
+
+
 function decimal(){
     if ((currentInput === 0) || (currentInput.includes(`.`) == false)){
         currentInput += `.`;
@@ -55,6 +62,9 @@ function decimal(){
 function updateCurrentInput(i){
     if(currentInput === 0) {
         currentInput = `${i}`;
+
+        clearButton_div.innerHTML = `C`;
+
     }
     else {
         currentInput =currentInput + `${i}`;
@@ -71,6 +81,7 @@ function shortenNumber(number){
 
 function updateOperation(i) {
     if (operation == null) {
+        clearButton_div.innerHTML = `AC`;
         operation = `${i}`;
         firstOperand = currentInput;
         if (answerGiven == true){
@@ -91,6 +102,7 @@ function updateOperation(i) {
 }
 
 function compute(){
+    clearButton_div.innerHTML = `AC`;
     secondOperand = currentInput;
     if (operation == `+`){
         solution  = +firstOperand + +secondOperand   // "+" sign ensures both operands are formatted as a number
@@ -113,7 +125,11 @@ function compute(){
 }
 
 clearButton_div.addEventListener(`click`, function(){
-    allClear();
+    if (clearButton_div.innerHTML == `AC`) {
+        allClear();
+    } else {
+        clear();
+    }
 })
 
 dotButton_div.addEventListener(`click`, function(){
