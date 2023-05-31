@@ -65,13 +65,12 @@ function decimal(){
 }
 
 function updateCurrentInput(i){
-    if(currentInput === 0) {
+    if (currentInput === 0) {
         if (ContainsEqual()){
             allClear();
         }
         currentInput = `${i}`;
         clearButton_div.innerHTML = `C`;
-
     }
     else {
         currentInput =currentInput + `${i}`;
@@ -142,6 +141,17 @@ function compute(){
     }
 }
 
+function calculate(){
+    if (operation == null){
+        solution = currentInput;
+        upperText_div.innerHTML = `${solution} =`;
+        lowerText_div.innerHTML = solution;
+    }
+    else {
+        compute(firstOperand, secondOperand, operation)    
+    }
+}
+
 function postSolution(){
     currentInput = 0;
     upperText_div.innerHTML = `${firstOperand} ${operation} ${secondOperand} =`
@@ -150,14 +160,16 @@ function postSolution(){
     answerGiven = true;
 }
 
-
-
-clearButton_div.addEventListener(`click`, function(){
+function operateClear() {
     if (clearButton_div.innerHTML == `AC`) {
         allClear();
     } else {
         clear();
     }
+}
+
+clearButton_div.addEventListener(`click`, function(){
+   operateClear()
 })
 
 dotButton_div.addEventListener(`click`, function(){
@@ -165,14 +177,8 @@ dotButton_div.addEventListener(`click`, function(){
 })
 
 equalButton_div.addEventListener(`click`, function(){
-    if (operation == null){
-        solution = currentInput;
-        upperText_div.innerHTML = `${solution} =`;
-        lowerText_div.innerHTML = solution;
-    }
-    else {
-        compute(firstOperand, secondOperand, operation)
-}})
+   calculate()
+})
 
 zeroButton_div.addEventListener(`click`, function() {
     updateCurrentInput(0)})
@@ -221,7 +227,8 @@ divideButton_div.addEventListener(`click`, function(){
 })
 
 document.addEventListener(`keydown`, function(event){
-    console.log(event);
+    console.log(event);   
+    //  use this to alert what key was pressed-if I want to add functionality to another key
     for (let i = 0; i < 10; i++){
         if (event.key == i) {
             updateCurrentInput(i)
@@ -242,20 +249,11 @@ document.addEventListener(`keydown`, function(event){
     if (event.key == '.'){
         decimal();
     }
-    if (event.key == 'Clear'){
-        if (clearButton_div.innerHTML == `AC`) {
-            allClear();
-        } else {
-            clear();
-        }
+    if ((event.key == 'Clear') || (event.key == 'Backspace')){
+        operateClear();
     }
     if ((event.key == 'Enter') || (event.key == `=`)){
-        if (operation == null){
-            solution = currentInput;
-            upperText_div.innerHTML = `${solution} =`;
-            lowerText_div.innerHTML = solution;
-        }
-        else {
-            compute(firstOperand, secondOperand, operation)    
-    }
+      calculate();
 }})
+
+
