@@ -47,9 +47,15 @@ allClear();
 function clear(){
     currentInput = 0;
     lowerText_div.innerHTML = currentInput;
-
+    clearButton_div.innerHTML =`AC`;
 }
 
+function ContainsEqual(){
+    if (upperText_div.innerHTML.includes(`=`)) {
+        console.log(`true`);
+        return true;
+    }
+}
 
 function decimal(){
     if ((currentInput === 0) || (currentInput.includes(`.`) == false)){
@@ -61,8 +67,10 @@ function decimal(){
 
 function updateCurrentInput(i){
     if(currentInput === 0) {
+        if (ContainsEqual()){
+            allClear();
+        }
         currentInput = `${i}`;
-
         clearButton_div.innerHTML = `C`;
 
     }
