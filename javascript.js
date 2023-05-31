@@ -114,23 +114,44 @@ function compute(){
     secondOperand = currentInput;
     if (operation == `+`){
         solution  = +firstOperand + +secondOperand   // "+" sign ensures both operands are formatted as a number
+        solution = shortenNumber(solution)
+        postSolution();
     }
     else if (operation == `-`){
         solution = firstOperand - secondOperand;
+        solution = shortenNumber(solution)
+        postSolution();
     }
     else if (operation == `x`){
         solution = firstOperand * secondOperand;
+        solution = shortenNumber(solution)
+        postSolution();
     }
-    else if (operation == `/`){
+    else if ((operation == `/`) && (secondOperand == 0)){
+        solution = `Cannot divide by zero`
+        postSolution();
+        firstOperand = null;
+        operation = null;
+        secondOperand = null;
+        currentInput = 0;
+        answerGiven = false;    
+    }
+    else if (operation == `/`) {
         solution = firstOperand / secondOperand;
+        solution = shortenNumber(solution)
+        postSolution();
     }
-    solution = shortenNumber(solution)
+}
+
+function postSolution(){
     currentInput = 0;
     upperText_div.innerHTML = `${firstOperand} ${operation} ${secondOperand} =`
     lowerText_div.innerHTML = solution;
     operation = null;
     answerGiven = true;
 }
+
+
 
 clearButton_div.addEventListener(`click`, function(){
     if (clearButton_div.innerHTML == `AC`) {
