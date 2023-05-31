@@ -227,4 +227,35 @@ document.addEventListener(`keydown`, function(event){
             updateCurrentInput(i)
         }
     }
-})
+    if (event.key == '+'){
+        updateOperation(`+`);
+    }
+    if (event.key == '-'){
+        updateOperation(`-`);
+    }
+    if (event.key == '/'){
+        updateOperation(`/`);
+    }
+    if (event.key == '*'){
+        updateOperation(`x`);
+    }
+    if (event.key == '.'){
+        decimal();
+    }
+    if (event.key == 'Clear'){
+        if (clearButton_div.innerHTML == `AC`) {
+            allClear();
+        } else {
+            clear();
+        }
+    }
+    if ((event.key == 'Enter') || (event.key == `=`)){
+        if (operation == null){
+            solution = currentInput;
+            upperText_div.innerHTML = `${solution} =`;
+            lowerText_div.innerHTML = solution;
+        }
+        else {
+            compute(firstOperand, secondOperand, operation)    
+    }
+}})
