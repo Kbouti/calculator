@@ -3,7 +3,6 @@ body {
     align-items:center;
     background: rgb(8, 130, 114);
     flex-direction:column;
-
     justify-content:flex-end;
 }
 
@@ -32,14 +31,12 @@ body {
     background-color:rgb(107, 107, 107);
 }
 
-
 #buttonPanel{
     flex-grow:3;
     display: grid;
     grid-template: repeat(5, 1fr) / repeat(4, 1fr);
     grid-gap:15px;
     padding:15px;
-
 }
 
 #clearButton,
@@ -60,7 +57,6 @@ grid-column:span 2;
 #subtractButton,
 #addButton {
     background-color:rgb(115, 115, 115);
-
 }
 
 
@@ -96,6 +92,7 @@ grid-column:span 2;
     flex-grow: 1;
     padding-right:15px;
     outline: 3px solid black;
+    opacity: .8;
 }
 
 #upperText {
