@@ -55,11 +55,14 @@ function ContainsEqual(){
 }
 
 function decimal(){
-    if ((currentInput === 0) || (currentInput.includes(`.`) == false)){
-        currentInput += `.`;
-        firstOperand = `0.`;
+    if (currentInput === 0) {
+        currentInput = `0.`;
         lowerText_div.innerHTML = currentInput;
     }
+    else if ((currentInput != 0) && (currentInput.includes(`.`) == false)){
+        currentInput += `.`;
+    }
+    lowerText_div.innerHTML = currentInput;
 }
 
 function updateCurrentInput(i){
