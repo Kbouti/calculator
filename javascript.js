@@ -142,13 +142,20 @@ function compute(){
     }
 }
 
+function giggity(){
+    if (solution == '69'){
+        alert('Giggity');
+    }
+}
+
 function calculate(){
     if (operation == null){
         solution = currentInput;
         upperText_div.innerHTML = `${solution} =`;
         lowerText_div.innerHTML = solution;
     }
-    compute(firstOperand, secondOperand, operation)    
+    compute(firstOperand, secondOperand, operation) 
+    giggity();
 }
 
 function postSolution(){
